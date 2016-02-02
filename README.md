@@ -38,6 +38,8 @@ Grid system would implicate some sort of skewed top-down perspective like this:
 
 ![Hexagonal skewed perspective](http://i.stack.imgur.com/fplfg.jpg)
 
+Also, [Here's a nice resource for Hex grids](http://www.redblobgames.com/grids/hexagons/)
+
 I wouldn't add height to the map though, it would overcomplicate gameplay. One good thing about the **Hexagonal** approach
 is that shooting projectiles would be less shitty (6 directions vs 4). On the other hand, coding an hexagonal grid system can
 become quite complicated.
