@@ -1,4 +1,4 @@
-# Preliminary notes
+# This are some basic notes to a multiplayer game project
 
 ## Must haves
 
@@ -64,12 +64,41 @@ a damage penalty, (not sure if attack should be canceled, damage-reduced or allo
 
 
 
-# Concrete (Stuff decided)
+# Stuff decided
 
-## Planning Phase
-Moment in which a player is deciding what their heroes will do in execution phase.
-Planning phase is timed and fast. Planning phase will allow the user to control al heroes which are in a `Ready State`
+## Matches
+The game will happen in self-contained matches (there's no continuity between one match and the next one). The game will make an effort to ensure both players have equal chances of winning. 
 
-## Execution Phase
-The execution system represents the moment in which decisions taken in `Planning Phase` are executed, these happen in `ticks`
-which are discrete units of time in which actions occur. Two actions in the same tick will run at the same time
+### Objective
+A player wins when their opponent's `king` dies, the king dies when its `hp` reaches zero. A `king` ~~can~~could be affected
+by friendly buffs
+
+
+
+## Match phases
+
+### Planning Phase
+Moment in which a player is deciding what their heroes will do in the next `execution phase`.
+`Planning Phase` is timed and fast-paced as it is the time where most of the match is spent. `Planning phase` allows the user to control all heroes which are in a `Ready State`.
+
+### Execution Phase
+The execution system represents the moment in which decisions taken in `Planning Phase` are executed, these happen in `Ticks`
+which are discrete units of time in which actions occur. Two actions in the same tick will happen at the same time.
+
+### Rest Phase
+This phase happens right after the `Execution Phase` is finished, and it is here where `Rest Time` is substracted from
+`Player Units`. After a `Rest Phase`, the all `Player Units` will have a `Rest Time` defined by the following logic in pseudo-code:
+
+```
+PlayerUnitRestTime = PlayerUnitRestTime - MinimumPlayerUnitRestTime
+```
+
+The `Rest Phase` could be decided to be an actual *visible* face or an internal phase which happens without the user knowing (giving the effect of the `Execution Phase` going right back to `Planning Phase` without delay)
+
+
+
+# Glossary
+**Ready State (Hero)**: When a hero has its `Rest Time` in zero. The moment in which one or more heroes enter `Ready State`
+the match changes to `Planning Phase`
+**Rest Time (Hero)**: Integer value representing the amount of `Time Units` in which a hero will not be in `Ready State`
+**Time Units**: Integer unit which is assigned to `Player Units`. It is used
