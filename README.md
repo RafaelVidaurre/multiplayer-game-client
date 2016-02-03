@@ -70,8 +70,8 @@ a damage penalty, (not sure if attack should be canceled, damage-reduced or allo
 The game will happen in self-contained matches (there's no continuity between one match and the next one). The game will make an effort to ensure both players have equal chances of winning. 
 
 ### Objective
-A player wins when their opponent's `king` dies, the king dies when its `hp` reaches zero. A `king` ~~can~~could be affected
-by friendly buffs
+A player wins when their opponent's `king` dies, the king dies when its `hp` reaches zero. A `king` could be affected
+by friendly buffs (maybe?)
 
 
 
@@ -87,10 +87,10 @@ which are discrete units of time in which actions occur. Two actions in the same
 
 ### Rest Phase
 This phase happens right after the `Execution Phase` is finished, and it is here where `Rest Time` is substracted from
-`Player Units`. After a `Rest Phase`, the all `Player Units` will have a `Rest Time` defined by the following logic in pseudo-code:
+`Units`. After a `Rest Phase`, the all `Units` will have a `Rest Time` defined by the following logic in pseudo-code:
 
 ```
-PlayerUnitRestTime = PlayerUnitRestTime - MinimumPlayerUnitRestTime
+unitRestTime = unitRestTime - MinimumUnitRestTime
 ```
 
 The `Rest Phase` could be decided to be an actual *visible* face or an internal phase which happens without the user knowing (giving the effect of the `Execution Phase` going right back to `Planning Phase` without delay)
@@ -98,13 +98,20 @@ The `Rest Phase` could be decided to be an actual *visible* face or an internal 
 
 
 # Glossary
-**Ready State (Hero)**: When a hero has its `Rest Time` in zero. The moment in which one or more heroes enter `Ready State`
+**Ready State**: When a `Unit` has its `Rest Time` in zero. The moment in which one or more heroes enter `Ready State`
 the match changes to `Planning Phase`.
 
-**Rest Time (Hero)**: Integer value representing the amount of `Time Units` in which a hero will not be in `Ready State`.
+**Rest Time**: Integer value representing the how long a hero must wait to be in `Ready State`. In practice, `Rest Time` determine which `Units` will be enabled in the next `Planning Phase` and in which order. The bigger the `Rest Time` the later a unit will be able to enter `Planning Phase`
 
-**Time Unit**: Integer unit which is assigned to `Player Units`. It is used
+**Unit**: Entity which is controlled by or belongs to a player: `Kings` or `Heroes`
 
-**Player Unit**: Unit which is controlled by or belongs to a player: `Kings` and `Heroes`
+**Tick**: A tick is an absolute unit of time used to in `Execution Phase`. Each `Tick` runs the first `Action Fragment` from the `Action Queue` of each unit who enqueued an action at `Planning Phase`
+
+**Action**: What a `Unit` will do in `Execution Phase`. An `Action` is used to generate `Action Queues`
+
+**Action Fragment (Need a better name)**: A task to be executed in a tick. It represents things like `Move x+1` and `Projectile move y-1`
+
+**Action Queue**: List of `Action Fragments` to be performed in order per tick. A `Tick` can actually push new `Action Fragments` into an `Action Queue` (Unconfirmed)
 
 
+NOTE: `Action Fragment` and `Action Queue` must be revised, they are yet not well thought for all cases
