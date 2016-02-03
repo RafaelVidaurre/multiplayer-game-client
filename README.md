@@ -99,6 +99,12 @@ The `Rest Phase` could be decided to be an actual *visible* face or an internal 
 
 # Glossary
 **Ready State (Hero)**: When a hero has its `Rest Time` in zero. The moment in which one or more heroes enter `Ready State`
-the match changes to `Planning Phase`
-**Rest Time (Hero)**: Integer value representing the amount of `Time Units` in which a hero will not be in `Ready State`
-**Time Units**: Integer unit which is assigned to `Player Units`. It is used
+the match changes to `Planning Phase`.
+
+**Rest Time (Hero)**: Integer value representing the amount of `Time Units` in which a hero will not be in `Ready State`.
+
+**Time Unit**: Integer unit which is assigned to `Player Units`. It is used
+
+**Player Unit**: Unit which is controlled by or belongs to a player: `Kings` and `Heroes`
+
+
