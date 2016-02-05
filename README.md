@@ -16,7 +16,7 @@ Non pay-to-win items will be the only kind of items available for purchase
 Actions done by a hero have a `rest period` measured in `time units` that leaves the hero completely unusable
 
 **High skill-cap (not in execution, but in strategy)**
-I want this to be a game which is easy to learn but hard to master. A competitive game, where players can become really 
+I want this to be a game which is easy to learn but hard to master. A competitive game, where players can become really
 good at.
 
 Ways to accomplish this:
@@ -27,7 +27,7 @@ Ways to accomplish this:
 ## Probably should have
 
 **Grid system**
-Makes game actions discrete and easy to understand. If I decide not to go with a grid system then the usual more granular 
+Makes game actions discrete and easy to understand. If I decide not to go with a grid system then the usual more granular
 kind of movement unit would take its place.
 
 For the `Grid System` I would only consider the following options:
@@ -45,16 +45,16 @@ is that shooting projectiles would be less shitty (6 directions vs 4). On the ot
 become quite complicated.
 
 **Replayable matches**
-Simultaneous turns and a high skill-cap can allow for impressive things to happen. Having the ability to replay and share 
+Simultaneous turns and a high skill-cap can allow for impressive things to happen. Having the ability to replay and share
 these events could be extremely beneficial for the game's success
 
 ## Misc Ideas
 **Movement cancel**
-If two players walk to the same tile in the same `tick` their movement path is interrupted, staying in the tile they were 
+If two players walk to the same tile in the same `tick` their movement path is interrupted, staying in the tile they were
 before the movement cancel occured
 
 **Counter**
-Could be a skill or a default game action. If a player counters in the sime tick a player attacks, the attacker receives 
+Could be a skill or a default game action. If a player counters in the sime tick a player attacks, the attacker receives
 a damage penalty, (not sure if attack should be canceled, damage-reduced or allowed)
 
 
@@ -67,7 +67,7 @@ a damage penalty, (not sure if attack should be canceled, damage-reduced or allo
 # Stuff decided
 
 ## Matches
-The game will happen in self-contained matches (there's no continuity between one match and the next one). The game will make an effort to ensure both players have equal chances of winning. 
+The game will happen in self-contained matches (there's no continuity between one match and the next one). The game will make an effort to ensure both players have equal chances of winning.
 
 ### Objective
 A player wins when their opponent's `king` dies, the king dies when its `hp` reaches zero. A `king` could be affected
@@ -115,3 +115,8 @@ the match changes to `Planning Phase`.
 
 
 NOTE: `Action Fragment` and `Action Queue` must be revised, they are yet not well thought for all cases
+
+
+# Progress
+
+[] Grid system
