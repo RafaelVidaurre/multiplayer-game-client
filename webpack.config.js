@@ -1,9 +1,11 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
     app: './app/app.js',
-  }
+  },
   output: {
     path: __dirname + '/dist',
     filename: '[name].bundle.js',
@@ -21,8 +23,12 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader'
-      }
+        loader: 'babel',
+        exclude: /(node_modules)/,
+        query: {
+          presets: ['es2015']
+        }
+      },
       {
         test: /\.(otf|woff|woff2)(\?.+)$/,
         loader: 'url-loader?limit=8192'
@@ -39,6 +45,8 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('styles.bundle.css'),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      title: 'Multiplayer game'
+    })
   ]
 };
