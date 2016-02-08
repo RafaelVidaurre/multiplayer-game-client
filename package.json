@@ -1,0 +1,20 @@
+{
+  "name": "multiplayer-game",
+  "version": "1.0.0",
+  "description": "## Must haves",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Narzerus/multiplayer-game.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Narzerus/multiplayer-game/issues"
+  },
+  "homepage": "https://github.com/Narzerus/multiplayer-game#readme",
+  "devDependencies": {
+    "createjs": "0.0.0"
+  }
+}
