@@ -1,12 +1,12 @@
 import React from 'react';
 
-import MainView from './components/main-view/main-view.jsx';
+import Stage from './components/stage/stage.jsx';
 
 export default React.createClass({
   render () {
     return (
       <div id="app">
-        <MainView/>
+        <Stage/>
       </div>
     );
   }

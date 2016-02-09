@@ -48,5 +48,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })
-  ]
+  ],
+  externals: {
+    'create-js': 'createjs'
+  }
 };
