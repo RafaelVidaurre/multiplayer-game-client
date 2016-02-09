@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './app/app.js',
+    app: './src/app.jsx',
   },
   output: {
     path: __dirname + '/dist',
@@ -22,11 +22,11 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
       },
       {
-        test: /\.js$/,
+        test: /\.jsx|\.js$/,
         loader: 'babel',
         exclude: /(node_modules)/,
         query: {
-          presets: ['es2015']
+          presets: ['es2015', 'react']
         }
       },
       {
@@ -46,7 +46,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('styles.bundle.css'),
     new HtmlWebpackPlugin({
-      title: 'Multiplayer game'
+      template: 'src/index.html'
     })
   ]
 };
