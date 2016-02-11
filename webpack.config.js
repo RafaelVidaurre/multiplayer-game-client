@@ -51,6 +51,7 @@ module.exports = {
   ],
   externals: {
     'create-js': 'createjs',
-    'phaser': 'Phaser'
+    'phaser': 'Phaser',
+    'global': 'window'
   }
 };
