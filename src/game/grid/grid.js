@@ -28,21 +28,42 @@ export default class Grid {
   * Builds the entire grid, creating hexagons and saves tiles in its own store
   */
   _createHexagons () {
-    for (let row = 0; row < this.width; row++) {
-      for (let col = 0; col < this.width; col++) {
-        let x, y, totalWidth, totalHeight, yOffset, xOffset;
+    let gridTemplate, rows;
 
-        xOffset = 0;
-        yOffset = 0;
-        if (row % 2 != 0) {
-          xOffset = HEX_WIDTH / 2;
-        }
-        totalWidth = HEX_WIDTH * this.width;
-        totalHeight = HEX_HEIGHT * this.height;
-        x = (col * HEX_WIDTH) - totalWidth / 2 + xOffset;
-        y = (row * (HEX_HEIGHT/4 * 3)) - totalHeight / 2;
+    gridTemplate = [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+    ];
+    rows = gridTemplate.length;
 
-        this._createHexagon(x, y)
+    for (let row = 0; row < rows; row ++) {
+      let cols;
+
+      cols = gridTemplate[row];
+
+      for (let col = 0; col < cols; col ++) {
+        let x, y, xOffset, yOffset;
+
+        xOffset = HEX_WIDTH * cols / 2;
+        yOffset = ((HEX_HEIGHT * 0.75) * rows) / 2;
+        x = col * HEX_WIDTH - xOffset;
+        y = row * HEX_HEIGHT * 0.75 - yOffset;
+
+        console.log(x);
+        console.log(y);
+
+        this._createHexagon(x, y);
       }
     }
   }
