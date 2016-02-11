@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.jsx',
+    app: './src/index.js',
   },
   output: {
     path: __dirname + '/dist',
@@ -50,6 +50,7 @@ module.exports = {
     })
   ],
   externals: {
-    'create-js': 'createjs'
+    'create-js': 'createjs',
+    'phaser': 'Phaser'
   }
 };
