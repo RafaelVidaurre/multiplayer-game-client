@@ -16,11 +16,6 @@ export default class Grid {
   * @param {Number} hexHeight vertical size of a tile
   */
   constructor (width, height) {
-    console.log(`created grid with width: ${width} and height: ${height}`);
-
-    this.width = width;
-    this.height = height;
-
     this._createHexagons();
   }
 
@@ -31,19 +26,15 @@ export default class Grid {
     let gridTemplate, rows;
 
     gridTemplate = [
+      5,
+      6,
       7,
       8,
       9,
-      10,
-      11,
-      12,
-      13,
-      12,
-      11,
-      10,
-      9,
       8,
-      7
+      7,
+      6,
+      5
     ];
     rows = gridTemplate.length;
 
@@ -55,13 +46,10 @@ export default class Grid {
       for (let col = 0; col < cols; col ++) {
         let x, y, xOffset, yOffset;
 
-        xOffset = HEX_WIDTH * cols / 2;
+        xOffset = (HEX_WIDTH * cols) / 2;
         yOffset = ((HEX_HEIGHT * 0.75) * rows) / 2;
         x = col * HEX_WIDTH - xOffset;
         y = row * HEX_HEIGHT * 0.75 - yOffset;
-
-        console.log(x);
-        console.log(y);
 
         this._createHexagon(x, y);
       }
@@ -81,7 +69,6 @@ export default class Grid {
 
     hexSprite = game.cache.getImage('grid.tile');
     hex = game.add.sprite(x, y, 'grid.tile');
-    hex.anchor.setTo(0.5, 0.5);
 
     return hex;
   }
