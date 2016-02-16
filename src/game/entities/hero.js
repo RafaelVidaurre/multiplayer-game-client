@@ -1,4 +1,5 @@
-import Position from '../position.js';
+import HasSprite from '../has-sprite.js';
+import InGrid from '../in-grid.js';
 
 module.exports = (opts) -> {
   let state, defaults;
@@ -11,6 +12,7 @@ module.exports = (opts) -> {
 
   return Object.assign(
     {},
-    Position(state)
+    HasSprite(state)
+    InGrid(state),
   )
 };
