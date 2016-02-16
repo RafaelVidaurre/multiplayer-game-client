@@ -1,0 +1,7 @@
+{
+  "name": "Sample",
+  "spriteName": "entities.heroes.sample",
+  "stats": {
+    "baseHealth": 100
+  }
+}
