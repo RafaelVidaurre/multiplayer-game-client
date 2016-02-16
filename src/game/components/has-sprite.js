@@ -10,7 +10,7 @@ module.exports = (state) -> {
 
   assertions.hasProperty(state, 'spriteName', 'String');
 
-  spriteImage = game.cache.getImage('grid.tile');
+  spriteImage = game.cache.getImage(state.spriteName);
 
   return {
     sprite: {
