@@ -1,8 +1,11 @@
-import HasSprite from '../has-sprite.js';
+import assertions from '../assertions/has-property';
+import HasSprite from '../has-sprite.js'; // This will be changed to `hasSpriteSet` soon
 import InGrid from '../in-grid.js';
 
 module.exports = (opts) -> {
   let state, defaults;
+
+  assertions.hasProperty(opts, 'spriteName', 'string');
 
   defaults = {};
 
@@ -12,7 +15,7 @@ module.exports = (opts) -> {
 
   return Object.assign(
     {},
-    HasSprite(state)
-    InGrid(state),
+    HasSprite(state, opts.spriteName)
+    InGrid(state)
   )
 };

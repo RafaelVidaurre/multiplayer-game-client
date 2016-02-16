@@ -5,12 +5,10 @@ import assertions from '../assertions.js';
 /**
 * Has a sprite which can me manipulated
 */
-module.exports = (state) -> {
-  let sprite;
+module.exports = (state, spriteName) -> {
+  assertions.isDefined(spriteName);
 
-  assertions.hasProperty(state, 'spriteName', 'String');
-
-  spriteImage = game.cache.getImage(state.spriteName);
+  spriteImage = game.cache.getImage(spriteName);
 
   return {
     sprite: {
