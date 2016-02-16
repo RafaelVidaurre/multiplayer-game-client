@@ -27,8 +27,6 @@ global.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO
     game.world.scale.setTo(1, 1);
   },
   update () {
-    //
-    console.log(game.input.x);
 
   }
 });
