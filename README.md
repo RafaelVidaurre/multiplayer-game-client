@@ -119,4 +119,8 @@ NOTE: `Action Fragment` and `Action Queue` must be revised, they are yet not wel
 
 # Progress
 
-[] Grid system
+[X] Basic entity loading-modeling
+[ ] Event system (Try Redux architecture)
+[ ] Store storing map data, grid is just a view that listens to map-events
+
+- If grid is just a view, then a gridReducer should handle pathfinding and all that?
