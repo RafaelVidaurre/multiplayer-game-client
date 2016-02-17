@@ -30,6 +30,10 @@ module.exports = {
         }
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.(otf|woff|woff2)(\?.+)$/,
         loader: 'url-loader?limit=8192'
       },

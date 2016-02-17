@@ -1,4 +1,4 @@
-module.exports = (object, property, type) -> {
+module.exports = (object, property, type) => {
   let prop;
 
   prop = object[property];

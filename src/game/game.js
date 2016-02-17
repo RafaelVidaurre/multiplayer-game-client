@@ -5,6 +5,7 @@ import _ from 'lodash';
 import global from 'global';
 
 import Grid from './grid/grid.js';
+import Hero from './entities/hero.js';
 
 global.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, '', {
   init () {
@@ -23,8 +24,15 @@ global.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO
     game.load.image('grid.tile', tileSpr);
   },
   create () {
-    let grid = new Grid();
+    let grid, hero, heroes;
+
+    grid = new Grid();
     game.world.scale.setTo(1, 1);
+
+    hero = Hero('sample');
+
+    console.log(hero);
+
   },
   update () {
 

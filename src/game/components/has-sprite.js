@@ -5,7 +5,9 @@ import assertions from '../assertions.js';
 /**
 * Has a sprite which can me manipulated
 */
-module.exports = (state, spriteName) -> {
+module.exports = (state, spriteName) => {
+  let spriteImage;
+  
   assertions.isDefined(spriteName);
 
   spriteImage = game.cache.getImage(spriteName);
@@ -16,4 +18,4 @@ module.exports = (state, spriteName) -> {
       image: spriteImage
     }
   };
-);
+}
