@@ -10,7 +10,7 @@ let store = {
 };
 
 module.exports = {
-  get: (storage,resource) => {
+  get: (storage, resource) => {
     return store[storage][resource];
   }
 };
