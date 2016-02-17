@@ -3,24 +3,23 @@ import HasSprite from '../components/has-sprite.js'; // This will be changed to 
 import InGrid from '../components/in-grid.js';
 import data from '../data/data.js';
 
-module.exports = (name) => {
+module.exports = (opts) => {
   let state, defaults, heroData;
 
-  heroData = data.get('heroes', name);
-
-  assertions.hasProperty(heroData, 'spriteName', 'string');
-
+  assertions.hasProperty(opts, 'name', 'string');
+  heroData = data.get('heroes', opts.name);
+  assertions.isDefined(heroData);
   defaults = {};
 
   state = Object.assign(defaults, {
     name: heroData.name,
     stats: {
-      baseHealth: heroData.baseHealth
+      baseHealth: heroData.stats.baseHealth
     }
   });
 
   return Object.assign(
-    {},
+    state,
     HasSprite(state, heroData.spriteName),
     InGrid(state)
   );

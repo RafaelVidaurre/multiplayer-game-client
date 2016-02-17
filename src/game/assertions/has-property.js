@@ -4,7 +4,7 @@ module.exports = (object, property, type) => {
   prop = object[property];
 
   if (_.isUndefined(object[property])) {
-    throw new Error(`Property "${property} has to be defined"`);
+    throw new Error(`Property "${property}" has to be defined`);
   }
 
   switch(type.toLowerCase()) {

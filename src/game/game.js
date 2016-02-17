@@ -29,7 +29,7 @@ global.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO
     grid = new Grid();
     game.world.scale.setTo(1, 1);
 
-    hero = Hero('sample');
+    hero = Hero({name: 'sample'});
 
     console.log(hero);
 
