@@ -1,0 +1,1 @@
+export const MATCH_ADD_ENTITY = 'MATCH_ADD_ENTITY';

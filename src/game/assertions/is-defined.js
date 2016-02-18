@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-module.exports = function (value) {
+export default function (value) {
   if (!_.isUndefined(value)) { return; }
 
   throw new Error(`Value required returned undefined`);

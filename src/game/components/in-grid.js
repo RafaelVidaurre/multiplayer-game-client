@@ -1,7 +1,7 @@
 /**
 * positioning of an object in a grid
 */
-module.exports = (state) => ({
+export default (state) => ({
   x: state.x,
   y: state.y
 });

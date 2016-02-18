@@ -1,5 +1,5 @@
 import sample from './sample.json';
 
-module.exports = {
+export default {
   sample
 };
