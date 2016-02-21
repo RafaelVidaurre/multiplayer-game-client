@@ -11,6 +11,7 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[hash].bundle.js'
   },
+  devtool: "source-map",
   module: {
     loaders: [
       {

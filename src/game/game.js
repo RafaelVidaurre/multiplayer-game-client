@@ -6,6 +6,7 @@ import global from 'global';
 
 import Grid from './grid/grid.js';
 import Hero from './entities/hero.js';
+import store from './store.js';
 
 global.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, '', {
   init () {
@@ -31,7 +32,7 @@ global.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO
 
     hero = Hero({name: 'sample'});
 
-    console.log(hero);
+    console.log(store.getState());
 
   },
   update () {

@@ -1,4 +1,4 @@
-import combineReducers from 'redux';
+import { combineReducers } from 'redux';
 
 import matchReducer from './match-reducer.js';
 
