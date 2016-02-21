@@ -3,6 +3,8 @@ import global from 'global';
 const HEX_WIDTH = 128;
 const HEX_HEIGHT = HEX_WIDTH / 2;
 
+//TODO: This might dissapear as it is
+
 /**
 * Grid which saves the match state
 */
