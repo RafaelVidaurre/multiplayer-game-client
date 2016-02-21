@@ -1,6 +1,6 @@
 import combineReducers from 'redux';
 
-import {MATCH_ADD_ENTITY} from '../actions/match-actions.js';
+import { MATCH_ADD_ENTITY } from '../actions/match-actions.js';
 import emptyGrid from '../fixtures/empty-grid.js';
 
 const START_PHASE = 'START_PHASE';

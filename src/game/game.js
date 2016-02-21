@@ -5,8 +5,8 @@ import _ from 'lodash';
 import global from 'global';
 
 import Grid from './grid/grid.js';
-import Hero from './entities/hero.js';
 import store from './store.js';
+import { startGame } from '../actions/global-actions.js';
 
 global.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, '', {
   init () {
@@ -25,17 +25,15 @@ global.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO
     game.load.image('grid.tile', tileSpr);
   },
   create () {
-    let grid, hero, heroes;
+    let grid;
 
-    grid = new Grid();
     game.world.scale.setTo(1, 1);
+    grid = Grid({
+      onStateChange: function (state) {
+        console.log(state);
+      }
+    });
 
-    hero = Hero({name: 'sample'});
-
-    console.log(store.getState());
-
-  },
-  update () {
-
+    store.dispatch(startGame());
   }
 });

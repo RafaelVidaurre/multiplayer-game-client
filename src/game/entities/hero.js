@@ -1,6 +1,6 @@
 import assertions from '../assertions.js';
-import HasSprite from '../components/has-sprite.js'; // This will be changed to `hasSpriteSet` soon
-import InGrid from '../components/in-grid.js';
+import HasSprite from '../mixins/has-sprite.js'; // This will be changed to `hasSpriteSet` soon
+import InGrid from '../mixins/in-grid.js';
 import data from '../data/data.js';
 
 export default (opts) => {
