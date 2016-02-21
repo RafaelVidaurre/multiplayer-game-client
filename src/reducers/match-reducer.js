@@ -1,19 +1,27 @@
 import combineReducers from 'redux';
 
-import { MATCH_ADD_ENTITY } from '../actions/match-actions.js';
+import { START_MATCH } from '../actions/match-actions.js';
 import emptyGrid from '../fixtures/empty-grid.js';
 
-const START_PHASE = 'START_PHASE';
+const MATCH_PHASES = {
+  OFF: 'OFF',
+  START: 'START'
+};
 const INITIAL_MATCH_STATE = {
-  currentPhase: START_PHASE,
-  grid: emptyGrid()
+  currentPhase: MATCH_PHASES.OFF,
+  grid: {}
 };
 
 export default function (state = INITIAL_MATCH_STATE, action) {
   switch (action.type) {
-    case MATCH_ADD_ENTITY:
-      // Here we should add an entity
-      return state;
+    case START_MATCH:
+      return Object.assign({},
+        state,
+        {
+          phase: MATCH_PHASES,
+          grid: emptyGrid()
+        }
+      );
     break;
     default:
       return state;
