@@ -1,5 +1,5 @@
 import assertions from '../assertions.js';
-import HasSprite from '../mixins/has-sprite.js'; // This will be changed to `hasSpriteSet` soon
+import HasSprite from '../mixins/has-graphic.js'; // This will be changed to `hasSpriteSet` soon
 import InGrid from '../mixins/in-grid.js';
 import data from '../data/data.js';
 

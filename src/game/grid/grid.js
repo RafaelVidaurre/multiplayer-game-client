@@ -1,9 +1,9 @@
-import global from 'global';
+import _ from 'lodash';
 
 import listensToStore from '../mixins/listens-to-store.js';
 
-const HEX_WIDTH = 128;
-const HEX_HEIGHT = 64;
+import Tile from '../entities/tile.js';
+import { hashToPos } from '../helpers/positioning.js';
 
 export default (opts = {}) => {
   let self;
@@ -15,8 +15,25 @@ export default (opts = {}) => {
       return prevState.match.grid !== currentState.match.grid;
     },
     update (state) {
+      let tileSprite;
       console.log('Rendering grid!');
       console.log(state.match.grid);
+
+      self.renderGrid(state.match.grid);
+    },
+    renderGrid (grid) {
+      let tiles;
+
+      tiles = [];
+
+      _.each(grid, function (gridTile, key) {
+        let tile, x, y, z;
+        console.log(hashToPos(key))
+
+        tile = Tile({pos: hashToPos(key)});
+        tile.graphic.render();
+      });
+
     }
   };
 
