@@ -1,25 +1,38 @@
 import combineReducers from 'redux';
 
-import { START_MATCH } from '../actions/match-actions.js';
+import {
+  MATCH_SETUP_START,
+  MATCH_SETUP_FINISH
+} from '../actions/match-actions.js';
+
 import emptyGrid from '../fixtures/empty-grid.js';
 
 const MATCH_PHASES = {
   OFF: 'OFF',
-  START: 'START'
+  SETUP_STARTED: 'SETUP_STARTED',
+  SETUP_FINISHED: 'SETUP_FINISHED'
 };
 const INITIAL_MATCH_STATE = {
-  currentPhase: MATCH_PHASES.OFF,
+  phase: MATCH_PHASES.OFF,
   grid: {}
 };
 
 export default function (state = INITIAL_MATCH_STATE, action) {
   switch (action.type) {
-    case START_MATCH:
+    case MATCH_SETUP_START:
       return Object.assign({},
         state,
         {
-          phase: MATCH_PHASES,
+          phase: MATCH_PHASES.SETUP_STARTED,
           grid: emptyGrid()
+        }
+      );
+    break;
+    case MATCH_SETUP_FINISH:
+      return Object.assign({},
+        state,
+        {
+          phase: MATCH_PHASES.SETUP_FINISHED,
         }
       );
     break;

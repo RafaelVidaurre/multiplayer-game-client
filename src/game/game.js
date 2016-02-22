@@ -6,7 +6,7 @@ import global from 'global';
 
 import Grid from './grid/grid.js';
 import store from './store.js';
-import { startGame } from '../actions/global-actions.js';
+import { gameSetup } from '../actions/game-actions.js';
 
 global.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, '', {
   init () {
@@ -34,6 +34,6 @@ global.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO
       }
     });
 
-    store.dispatch(startGame());
+    store.dispatch(gameSetup());
   }
 });
