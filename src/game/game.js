@@ -28,11 +28,7 @@ global.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO
     let grid;
 
     game.world.scale.setTo(1, 1);
-    grid = Grid({
-      onStateChange: function (state) {
-        console.log(state);
-      }
-    });
+    grid = Grid();
 
     store.dispatch(gameSetup());
   }

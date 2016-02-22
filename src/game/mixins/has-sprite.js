@@ -5,7 +5,7 @@ import assertions from '../assertions.js';
 /**
 * Has a sprite which can me manipulated
 */
-export default (state, spriteName) => {
+export default (base, spriteName) => {
   let spriteImage;
 
   assertions.isDefined(spriteName);
@@ -14,7 +14,7 @@ export default (state, spriteName) => {
 
   return {
     sprite: {
-      name: state.spriteName,
+      name: base.spriteName,
       image: spriteImage
     }
   };

@@ -1,13 +1,20 @@
 import store from '../store.js';
 
-export default (state) => {
-  let base;
+export default (base) => {
+  let self, previousState, currentState;
 
-  base = {};
-  base.onStateChange = state.onStateChange || function () {};
-  base.unsubscribe = store.subscribe(function () {
-    base.onStateChange(store.getState());
-  });
+  self = {
+    shouldUpdate: base.shouldUpdate || function () { return true; },
+    update: base.update || function () {},
+    unsubscribe: store.subscribe(function () {
+      previousState = currentState;
+      currentState = store.getState();
 
-  return base;
+      if (self.shouldUpdate(previousState, currentState)) {
+        self.update(currentState);
+      }
+    })
+  }
+
+  return self;
 }
